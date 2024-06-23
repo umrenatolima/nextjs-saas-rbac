@@ -1,0 +1,18 @@
+{
+  "name": "@next-saas-rbac/auth",
+  "version": "0.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "devDependencies": {
+    "@next-saas-rbac/prettier": "workspace:*",
+    "@next-saas-rbac/eslint-config": "workspace:*",
+    "@next-saas-rbac/tsconfig": "workspace:*"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@next-saas-rbac/eslint-config/library"
+    ]
+  },
+  "prettier": "@next-saas-rbac/prettier"
+}
