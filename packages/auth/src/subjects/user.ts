@@ -1,3 +1,13 @@
-type UserPermissions = 'create' | 'delete' | 'invite' | 'manage'
+import { z } from 'zod'
 
-export type UserSubject = [UserPermissions, 'User']
+export const userSubject = z.tuple([
+  z.union([
+    z.literal('manage'),
+    z.literal('get'),
+    z.literal('update'),
+    z.literal('delete'),
+  ]),
+  z.literal('User'),
+])
+
+export type UserSubject = z.infer<typeof userSubject>

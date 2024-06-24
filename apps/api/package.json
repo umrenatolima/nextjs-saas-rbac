@@ -1,21 +1,22 @@
 {
-  "name": "@next-saas-rbac/auth",
-  "version": "0.0.0",
-  "private": true,
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "name": "@next-saas-rbac/api",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "tsx watch src/index.ts"
+  },
   "dependencies": {
-    "@casl/ability": "^6.7.1"
+    "@next-saas-rbac/auth": "workspace:*"
   },
   "devDependencies": {
     "@next-saas-rbac/eslint-config": "workspace:*",
     "@next-saas-rbac/prettier": "workspace:*",
     "@next-saas-rbac/tsconfig": "workspace:*",
-    "zod": "^3.23.8"
+    "@types/node": "^20.14.8",
+    "tsx": "^4.15.7"
   },
   "eslintConfig": {
     "extends": [
-      "@next-saas-rbac/eslint-config/library"
+      "@next-saas-rbac/eslint-config/node"
     ]
   },
   "prettier": "@next-saas-rbac/prettier"
