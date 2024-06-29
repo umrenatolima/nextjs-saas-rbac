@@ -16,6 +16,6 @@ export async function createAccount(app: FastifyInstance) {
     },
     () => {
       return 'User created!'
-    }
+    },
   )
 }
