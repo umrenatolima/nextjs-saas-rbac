@@ -16,6 +16,7 @@
     "@next-saas-rbac/prettier": "workspace:*",
     "@next-saas-rbac/tsconfig": "workspace:*",
     "@types/node": "^20.14.8",
+    "prisma": "^5.16.1",
     "tsx": "^4.15.7"
   },
   "eslintConfig": {
