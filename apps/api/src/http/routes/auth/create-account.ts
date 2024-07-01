@@ -5,19 +5,19 @@ import { z } from 'zod'
 
 import { prisma } from '@/lib/prisma'
 
-const schema = {
-  body: z.object({
-    name: z.string(),
-    email: z.string().email(),
-    password: z.string().min(6),
-  }),
-}
-
 export async function createAccount(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().post(
     '/users',
     {
-      schema,
+      schema: {
+        tags: ['auth'],
+        summary: 'Create a new account',
+        body: z.object({
+          name: z.string(),
+          email: z.string().email(),
+          password: z.string().min(6),
+        }),
+      },
     },
     async (request, reply) => {
       const { name, email, password } = request.body
