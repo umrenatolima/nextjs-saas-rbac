@@ -6,7 +6,7 @@ import { UnauthorizedError } from './routes/_errors/unauthorized-error'
 
 type FastifyErrorHandler = FastifyInstance['errorHandler']
 
-export const errorHandler: FastifyErrorHandler = (error, request, reply) => {
+export const errorHandler: FastifyErrorHandler = (error, _, reply) => {
   if (error instanceof ZodError) {
     return reply.status(400).send({
       message: 'Validation error',
@@ -26,7 +26,8 @@ export const errorHandler: FastifyErrorHandler = (error, request, reply) => {
     })
   }
 
-  // send error to observability platform
+  // TODO: send error to observability platform
+  console.error(error)
 
   return reply.status(500).send({ message: 'Internal server error.' })
 }
