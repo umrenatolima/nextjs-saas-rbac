@@ -28,12 +28,14 @@ export async function sendPasswordResetEmail(app: FastifyInstance) {
 
       if (!findUserByEmail) return reply.status(201).send() // we don't want people to know if user exists or not
 
-      await prisma.token.create({
+      const { id } = await prisma.token.create({
         data: {
           type: 'PASSWORD_RECOVER',
           userId: findUserByEmail.id,
         },
       })
+
+      console.log('Token Id: ', id) // TODO: Remove when send email feature is implemented
 
       // TODO: Send e-mail with password recover link
 
