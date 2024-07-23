@@ -1,0 +1,23 @@
+{
+  "name": "@next-saas-rbac/env",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.ts",
+  "types": "index.ts",
+  "dependencies": {
+    "@t3-oss/env-nextjs": "^0.11.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@next-saas-rbac/eslint-config": "workspace:*",
+    "@next-saas-rbac/prettier": "workspace:*",
+    "@next-saas-rbac/tsconfig": "workspace:*",
+    "@types/node": "^20.14.8"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@next-saas-rbac/eslint-config/library"
+    ]
+  },
+  "prettier": "@next-saas-rbac/prettier"
+}
