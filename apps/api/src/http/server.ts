@@ -18,6 +18,7 @@ import { createAccount } from './routes/auth/create-account'
 import { getProfile } from './routes/auth/get-profile'
 import { resetPassword } from './routes/auth/reset-password'
 import { sendPasswordResetEmail } from './routes/auth/send-password-reset-email'
+import { createOrganization } from './routes/orgs/create-organization'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -62,6 +63,8 @@ app.register(createAccount)
 app.register(getProfile)
 app.register(resetPassword)
 app.register(sendPasswordResetEmail)
+
+app.register(createOrganization)
 
 app.listen({ port: env.SERVER_PORT }).then(() => {
   console.log('HTTP server running!')
