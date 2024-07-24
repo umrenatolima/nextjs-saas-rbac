@@ -19,6 +19,7 @@ import { getProfile } from './routes/auth/get-profile'
 import { resetPassword } from './routes/auth/reset-password'
 import { sendPasswordResetEmail } from './routes/auth/send-password-reset-email'
 import { createOrganization } from './routes/orgs/create-organization'
+import { getOrganizations } from './routes/orgs/get-organizations'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -63,6 +64,7 @@ app.register(createAccount)
 app.register(getProfile)
 app.register(resetPassword)
 app.register(sendPasswordResetEmail)
+app.register(getOrganizations)
 
 app.register(createOrganization)
 
